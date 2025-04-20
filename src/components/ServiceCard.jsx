@@ -1,11 +1,16 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import categoryImage from "../assets/wood-category-1.jpg";
 export default function ServiceCard({ icon, title, subtitle, description }) {
   return (
     <div className="flex flex-col items-center justify-center hover:scale-105 transition-all duration-300 group  shadow-lg h-full  rounded-t-lg hover:shadow-xl">
       <div className="flex flex-col items-center justify-center gap-5 p-5 rounded-t-lg cursor-pointer bg-white w-full h-full">
-        <div className="bg-(--color-primary) p-3 rounded-full shadow-md flex items-center justify-center w-16 h-16 group-hover:bg-black/90 transition-all duration-300">
-          <i className="text-4xl  text-(--color-white)">{icon}</i>
+        <div>
+          <img
+            src={categoryImage}
+            alt="category image"
+            className="rounded-md"
+          />
         </div>
         <h1 className="text-2xl font-bold text-center">{title}</h1>
         <h2 className="text-xl font-semibold text-center text-(--color-primary)/70">
