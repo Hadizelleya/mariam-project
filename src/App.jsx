@@ -11,7 +11,7 @@ import AboutPage from "./pages/AboutPage";
 
 export default function App() {
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="popLayout">
       <div className="w-full">
         <Navbar />
         <ScrollToTop />

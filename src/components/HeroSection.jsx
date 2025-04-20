@@ -27,6 +27,9 @@ export default function HeroSection() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
             non. Est ratione voluptate in eos laboriosam rem, minima cum rerum.
           </p>
+          <button className="bg-(--color-primary) py-4 px-6 text-xl hover:bg-(--color-black)/90 text-white rounded-xl mt-6 cursor-pointer transition-colors duration-300 ease-initial font-bold">
+            Subscribe Now!
+          </button>
         </div>
 
         <div>
