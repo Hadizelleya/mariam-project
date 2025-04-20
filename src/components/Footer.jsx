@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaGooglePlusG, FaRss } from "react-icons/fa";
+import logo from "../assets/maraimLogo-white.png"; // Adjust the path to your logo image
 
 export default function Footer() {
   return (
@@ -71,11 +72,8 @@ export default function Footer() {
 
       {/* Footer Bottom */}
       <div className="flex flex-col sm:flex-row items-center justify-between container mx-auto mt-10 w-full  border-t border-gray-700 px-10 p-5">
-        <div className="flex items-center justify-center gap-5">
-          <div className="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-            <span className="text-white text-2xl font-bold">ع</span>
-          </div>
-          <h2 className="text-white text-2xl font-bold">عربسات</h2>
+        <div>
+          <img src={logo} alt="logo" className="w-[100px]" />
         </div>
         <div className="mt-10 pt-5 text-center text-sm">
           <p className="text-gray-300">

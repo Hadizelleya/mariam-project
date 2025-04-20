@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
+import logo from "../assets/mariamLogo.png"; // Adjust the path to your logo image
+import whiteLogo from "../assets/maraimlogo-white.png"; // Adjust the path to your white logo image
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,13 +33,19 @@ export default function Navbar() {
       }`}
     >
       <div>
-        <h1
-          className={`text-4xl text-(--color-primary) text-shadow-sm font-bold ${
-            isScrolled ? "text-shadow-white" : "text-shadow-black/80"
-          }`}
-        >
-          عربسات
-        </h1>
+        {isScrolled ? (
+          <img
+            src={whiteLogo}
+            alt="logo"
+            className="w-[100px] transition-all duration-300"
+          />
+        ) : (
+          <img
+            src={logo}
+            alt="logo"
+            className="w-[100px] transition-all duration-300"
+          />
+        )}
       </div>
 
       {/* Hamburger Menu Button */}
@@ -61,25 +69,29 @@ export default function Navbar() {
         } md:max-h-screen md:opacity-100 overflow-hidden z-20`}
       >
         <ul className="flex flex-col md:flex-row gap-5 md:gap-10 items-center justify-center p-5 md:p-0">
-          <li className="cursor-pointer transition-all ease-in-out hover:text-(--color-primary) text-xl font-semibold duration-200">
-            <HashLink smooth to="#home">
+          <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
+            <Link to="/" className="hover:text-(--color-primary)">
               Home
-            </HashLink>
+            </Link>
+            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
-          <li className="cursor-pointer transition-all ease-in-out hover:text-(--color-primary) text-xl font-semibold duration-200">
-            <HashLink smooth to="#services">
-              Services
-            </HashLink>
+          <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
+            <Link to="/products" className="hover:text-(--color-primary)">
+              Products
+            </Link>
+            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
-          <li className="cursor-pointer transition-all ease-in-out hover:text-(--color-primary) text-xl font-semibold duration-200">
-            <HashLink smooth to="#about">
+          <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
+            <Link to="/about" className="hover:text-(--color-primary)">
               About
-            </HashLink>
+            </Link>
+            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
-          <li className="cursor-pointer transition-all ease-in-out hover:text-(--color-primary) text-xl font-semibold duration-200">
-            <HashLink smooth to="#contact">
+          <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
+            <Link to="/contact" className="hover:text-(--color-primary)">
               Contact
-            </HashLink>
+            </Link>
+            <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
         </ul>
       </div>

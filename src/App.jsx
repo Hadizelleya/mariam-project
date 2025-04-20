@@ -1,34 +1,39 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import AnimatedDiv from "./components/AnimatedDiv";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import Services from "./components/Services";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <>
-      <Navbar />
-      <div id="home">
-        <HeroSection />
-      </div>
-      <div id="services">
-        <Services />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
-      <div id="footer">
+    <AnimatePresence mode="wait">
+      <div className="w-full">
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <AnimatedDiv>
+                <Home />
+              </AnimatedDiv>
+            }
+          />
+          <Route
+            path="/products"
+            element={
+              <AnimatedDiv>
+                <Products />
+              </AnimatedDiv>
+            }
+          />
+        </Routes>
         <Footer />
       </div>
-    </>
+    </AnimatePresence>
   );
 }
-
-export default App;
