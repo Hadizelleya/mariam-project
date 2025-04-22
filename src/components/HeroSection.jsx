@@ -20,20 +20,22 @@ export default function HeroSection() {
       }}
     >
       <div className="absolute top-0 left-0 w-full h-full bg-white/60" />
-      <div className="z-10 relative flex  p-7 md:p-0 items-center justify-evenly h-full">
+      <div className="z-10 relative flex flex-col sm:flex-row  p-7 md:p-0 items-center justify-evenly h-full">
+        <div>
+          <img src={logo} alt="logo" className="w-[90%]" />
+        </div>
+
         <div className="flex flex-col items-center justify-center text-center mt-20 md:mt-0">
           <h2 className="text-black text-6xl font-semibold">Start Here</h2>
           <p className="text-black text-2xl font-semibold mt-5 max-w-[600px] text-center">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
-            non. Est ratione voluptate in eos laboriosam rem, minima cum rerum.
+            Wood furniture combines natural beauty and timeless elegance, adding
+            warmth and character to any space. Its durability and versatility
+            make it a perfect choice for those who value quality and
+            craftsmanship.
           </p>
           <button className="bg-(--color-primary) py-4 px-6 text-xl hover:bg-(--color-black)/90 text-white rounded-xl mt-6 cursor-pointer transition-colors duration-300 ease-initial font-bold">
             Subscribe Now!
           </button>
-        </div>
-
-        <div>
-          <img src={logo} alt="logo" className="w-[90%]" />
         </div>
       </div>
     </motion.div>

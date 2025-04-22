@@ -15,7 +15,7 @@ export default function ProductCard({ name, image, price }) {
           <div className="flex flex-col items-cneter justify-center gap-2 p-4">
             <h1 className="text-2xl font-bold text-center">{name}</h1>
             <h2 className="text-xl font-semibold text-center text-(--color-primary)/70">
-              {price}
+              {price}$
             </h2>
           </div>
         </div>

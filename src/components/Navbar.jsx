@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { FiMenu } from "react-icons/fi";
-import logo from "../assets/mariamLogo.png"; // Adjust the path to your logo image
-import whiteLogo from "../assets/maraimlogo-white.png"; // Adjust the path to your white logo image
+import logo from "../assets/mariamLogo.png";
+import whiteLogo from "../assets/maraimlogo-white.png";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation(); // Get the current route
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -72,8 +73,10 @@ export default function Navbar() {
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
             <Link
               to="/"
-              className="hover:text-(--color-primary)"
-              onClick={toggleMenu}
+              className={`hover:text-(--color-primary) ${
+                location.pathname === "/" ? "text-(--color-primary)" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
@@ -82,8 +85,12 @@ export default function Navbar() {
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
             <Link
               to="/products"
-              className="hover:text-(--color-primary)"
-              onClick={toggleMenu}
+              className={`hover:text-(--color-primary) ${
+                location.pathname === "/products"
+                  ? "text-(--color-primary)"
+                  : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Products
             </Link>
@@ -92,8 +99,10 @@ export default function Navbar() {
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
             <Link
               to="/about"
-              className="hover:text-(--color-primary)"
-              onClick={toggleMenu}
+              className={`hover:text-(--color-primary) ${
+                location.pathname === "/about" ? "text-(--color-primary)" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
@@ -102,8 +111,10 @@ export default function Navbar() {
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
             <Link
               to="/contact"
-              className="hover:text-(--color-primary)"
-              onClick={toggleMenu}
+              className={`hover:text-(--color-primary) ${
+                location.pathname === "/contact" ? "text-(--color-primary)" : ""
+              }`}
+              onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
