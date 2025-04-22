@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 export default function ServiceCard({ image, title, subtitle, description }) {
   return (
@@ -21,10 +22,13 @@ export default function ServiceCard({ image, title, subtitle, description }) {
         </div>
       </div>
       <div className="flex items-center justify-between w-full px-4 py-2 bg-(--color-primary) text-white rounded-b-lg shadow-md hover:bg-(--color-black)/90 hover:text-(--color-white) transition-all duration-300 cursor-pointer">
-        <p className="text-lg font-semibold">Check More</p>
-        <i>
-          <FaArrowRight className="text-xl font-semibold" />
-        </i>
+        <Link
+          to={`/products/${title}`}
+          className="flex items-center justify-between w-full gap-2"
+        >
+          <span className="text-lg font-semibold">See Products</span>
+          <FaArrowRight className="text-xl" />
+        </Link>
       </div>
     </div>
   );

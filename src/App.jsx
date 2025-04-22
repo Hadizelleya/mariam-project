@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
+import OneCategory from "./components/OneCategory";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/products/:categoryName" element={<OneCategory />} />
         </Routes>
         <Footer />
       </div>

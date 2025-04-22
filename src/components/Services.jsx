@@ -4,6 +4,8 @@ import categoryImage from "../assets/wood-category-1.jpg";
 import categoryImage2 from "../assets/wood-category-2.jpg";
 import categoryImage3 from "../assets/wood-category-3.jpg";
 import categoryImage4 from "../assets/wood-category-4.jpg";
+import { categories } from "../data/data";
+
 export default function Services() {
   return (
     <div>
@@ -12,30 +14,18 @@ export default function Services() {
           Categories
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <ServiceCard
-            image={categoryImage}
-            title="Cloud Services"
-            subtitle="Cloud Solutions"
-            description="We offer a range of cloud services to help you scale your business."
-          />
-          <ServiceCard
-            image={categoryImage2}
-            title="Email Services"
-            subtitle="Email Solutions"
-            description="Secure and reliable email services for your business."
-          />
-          <ServiceCard
-            image={categoryImage3}
-            title="TV Services"
-            subtitle="Entertainment Solutions"
-            description="High-quality TV services for your entertainment needs."
-          />
-          <ServiceCard
-            image={categoryImage4}
-            title="Server Solutions"
-            subtitle="Hosting Solutions"
-            description="Reliable server solutions to host your applications."
-          />
+          {categories.map((category) => (
+            <>
+              <div key={category.id}>
+                <ServiceCard
+                  image={category.image}
+                  title={category.name}
+                  subtitle={category.subtitle}
+                  description={category.description}
+                />
+              </div>
+            </>
+          ))}
         </div>
       </div>
     </div>

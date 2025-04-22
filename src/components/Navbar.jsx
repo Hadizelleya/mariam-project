@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Menu Items */}
       <div
-        className={`absolute top-20 left-0 w-full ${
+        className={`absolute top-37 left-0 w-full ${
           isScrolled ? "bg-black/90 text-white" : "bg-white text-black"
         } md:bg-transparent md:static md:w-auto md:flex md:items-center md:justify-center transition-all duration-300 ${
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -70,25 +70,41 @@ export default function Navbar() {
       >
         <ul className="flex flex-col md:flex-row gap-5 md:gap-10 items-center justify-center p-5 md:p-0">
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
-            <Link to="/" className="hover:text-(--color-primary)">
+            <Link
+              to="/"
+              className="hover:text-(--color-primary)"
+              onClick={toggleMenu}
+            >
               Home
             </Link>
             <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
-            <Link to="/products" className="hover:text-(--color-primary)">
+            <Link
+              to="/products"
+              className="hover:text-(--color-primary)"
+              onClick={toggleMenu}
+            >
               Products
             </Link>
             <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
-            <Link to="/about" className="hover:text-(--color-primary)">
+            <Link
+              to="/about"
+              className="hover:text-(--color-primary)"
+              onClick={toggleMenu}
+            >
               About
             </Link>
             <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>
           </li>
           <li className="cursor-pointer transition-all ease-in-out text-xl font-semibold duration-200 relative group">
-            <Link to="/contact" className="hover:text-(--color-primary)">
+            <Link
+              to="/contact"
+              className="hover:text-(--color-primary)"
+              onClick={toggleMenu}
+            >
               Contact
             </Link>
             <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-(--color-primary) group-hover:w-full transition-all duration-300"></div>

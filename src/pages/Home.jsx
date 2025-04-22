@@ -3,7 +3,6 @@ import HeroSection from "../components/HeroSection";
 import Services from "../components/Services";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import { motion } from "framer-motion";
 import AnimatedDiv from "../components/AnimatedDiv";
 
 export default function Home() {
