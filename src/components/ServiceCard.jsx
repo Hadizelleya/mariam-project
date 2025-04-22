@@ -10,7 +10,7 @@ export default function ServiceCard({ image, title, subtitle, description }) {
           <img
             src={image}
             alt="category image"
-            className="rounded-md w-full h-[400px]"
+            className="rounded-md w-full h-[400px] object-cover"
           />
         </div>
         <div className="flex flex-col items-cneter justify-center gap-2 p-4">

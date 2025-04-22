@@ -8,7 +8,7 @@ export default function Products() {
   return (
     <AnimatedDiv>
       <div className="w-full h-full flex flex-col items-center justify-center p-10 gap-10">
-        <div className="flex flex-col items-center justify-center gap-10 mb-10 mt-20">
+        <div className="flex flex-col items-center justify-center gap-10 mb-10 mt-10">
           {categories.map((category) => (
             <div
               key={category.id}
